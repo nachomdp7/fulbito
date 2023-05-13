@@ -1,36 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import InsertoJugador from './Components/InsertoJugador'
 import Jugador from './Components/Jugador'
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
 
+import "primereact/resources/primereact.min.css";   //core css
+import {Button} from 'primereact/button';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='m-12'>
+      <div className='flex align-center justify-evenly mb-12'>
+        <Button label='btnText'/>
+        <Button label='btnText' rounded/>
+        <Button label='btnText' severity='help' text/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          <Jugador idJugador={1} idEquipo={1} name="nacho" posicion={5} edad={21}/>
-        </p>
+      <div className='flex gap-5 flex-wrap justify-center'>
+        <Jugador idJugador={1} idEquipo={1} name="nacho" posicion={5} edad={21}/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
