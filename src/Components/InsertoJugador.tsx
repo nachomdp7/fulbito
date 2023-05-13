@@ -9,12 +9,12 @@ function InsertoJugador() {
     const [edad, setEdad] = useState()
     const [posicion, setPosicion] = useState()
 
-   /* function addPlayer() {
+    function addPlayer() {  
         axios.post("link de java", id_Jugador: IdJugador, {
             id_Equipo: idEquipo, nombre: nombre, edad: edad, posicion: posicion
         }).then(function (response)){
             console.log(response.data)
-        } */
+        }
     }
     function handleIdEChange(event: any) {
         setIdEquipo(event.target.value)
