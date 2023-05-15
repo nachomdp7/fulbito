@@ -3,25 +3,22 @@ import axios from 'axios'
 
 function InsertoJugador() {
 
-    const [IdJugador, setIdJugador] = useState()
+   
     const [nombre, setNombre] = useState()
     const [idEquipo, setIdEquipo] = useState()
     const [edad, setEdad] = useState()
     const [posicion, setPosicion] = useState()
 
     function addPlayer() {  
-        axios.post("link de java", id_Jugador: IdJugador, {
-            id_Equipo: idEquipo, nombre: nombre, edad: edad, posicion: posicion
-        }).then(function (response)){
-            console.log(response.data)
-        }
-    }
+        axios.post("http://localhost:8080/pagFutbol/Jugador/add", { 
+            id_Equipo: idEquipo, nombre_Jugador: nombre, edad_Jugador: edad, posicion_Jugador: posicion}
+        ).then((response)=>{
+        console.log(response.data)}
+        )}
     function handleIdEChange(event: any) {
         setIdEquipo(event.target.value)
     }
-    function handleIdJChange(event: any) {
-        setIdJugador(event.target.value)
-    }
+   
     function handleNombreEChange(event: any) {
         setNombre(event.target.value)
     }
@@ -36,8 +33,6 @@ function InsertoJugador() {
         <div>
         <label htmlFor="idEquipo">ID Equipo:</label>
         <input id="idEquipo" type='number' onChange={handleIdEChange}></input>
-        <label htmlFor="idJugador">ID Jugador:</label>
-        <input id="idJugador" type='number' onChange={handleIdJChange}></input>
         <label htmlFor="name">NAME:</label>
         <input id="name" type='text' onChange={handleNombreEChange}></input>
         <label htmlFor="edad">Edad:</label>

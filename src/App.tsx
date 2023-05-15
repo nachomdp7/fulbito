@@ -6,6 +6,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 import "primereact/resources/primereact.min.css";   //core css
 import {Button} from 'primereact/button';
+import MostrarTodos from './Components/MostrarTodos';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,8 +17,10 @@ function App() {
         <Button label='btnText' rounded/>
         <Button label='btnText' severity='help' text/>
       </div>
+      <InsertoJugador/>
       <div className='flex gap-5 flex-wrap justify-center'>
         <Jugador idJugador={1} idEquipo={1} name="nacho" posicion={5} edad={21}/>
+        <MostrarTodos/>
       </div>
     </div>
   )
